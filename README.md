@@ -1,6 +1,6 @@
 EU1KY Antenna Analyzer Firmware VE7IT Version
 ------------------------------------------------------------------------
-
+<pre>
 hardware project site: https://bitbucket.org/kuchura/eu1ky_aa_v3/wiki/Home
 software derived from: https://github.com/ted051/Analyzer_EU1KY_CEC_AKF
 my build notes: http://ve7it.cowlug.org/eu1ky-ve7it.html
@@ -52,7 +52,7 @@ git commit -m "Add some-feature"
 git push --dry-run
 # get stuff back up to github
 git push
-
+</pre>
 ------------------------------------------------------------------------
 
 
