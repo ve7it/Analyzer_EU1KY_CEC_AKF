@@ -122,6 +122,7 @@ int main(void)
 #ifndef _DEBUG_UART
     if (ShowLogo()==-1)// no logo.bmp or logo.png file found:
         LCD_DrawBitmap(LCD_MakePoint(90, 24), logo_bmp, logo_bmp_size);// show original logo
+    while(!TOUCH_IsPressed());      // ve7it hang until screen tapped
 #endif
 
     //TODO : Remove comment before Release / by KD8CEC
@@ -135,7 +136,7 @@ int main(void)
     }
 
  #ifndef _DEBUG_UART
-    Sleep(1000);
+    Sleep(100);     // ve7it was 1000
 #endif
     ColourSelection=CFG_GetParam(CFG_PARAM_Daylight);
     FatLines=true;

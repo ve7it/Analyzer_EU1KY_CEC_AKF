@@ -473,6 +473,9 @@ int counter11;
 
     //modified by KD8CEC
 
+#define BUILD_TIMESTAMP_US "25-Oct-2020-VE7IT"
+#define BUILD_TIMESTAMP_D "2020-Oct-25-VE7IT"
+
 if (DatumDDMMYYYY)
 {
 

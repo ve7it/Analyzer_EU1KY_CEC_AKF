@@ -1,31 +1,55 @@
-# antennaanalyzer
-# Currently I am preparing to release source code. Please wait some days.
-EU1KY Antenna Analyzer Firmware CEC Version
+EU1KY Antenna Analyzer Firmware VE7IT Version
+------------------------------------------------------------------------
 
-This is in preparation for source distribution.
+hardware project site: https://bitbucket.org/kuchura/eu1ky_aa_v3/wiki/Home
+software derived from: https://github.com/ted051/Analyzer_EU1KY_CEC_AKF
+my build notes: http://ve7it.cowlug.org/eu1ky-ve7it.html
 
-Firmware information can be found in the link below.
-http://www.hamskey.com
+Slight tweaks to a great piece of software.
+- main.c holds splash screen until the screen is tapped
+    while(!TOUCH_IsPressed());      // lpg hang until screen tapped
 
-EU1KY site README.md
----------------------------------------------------
-# README #
+- main.c 1000ms delay reduced to 100ms after tapping on splash screen
+    Sleep(100);
 
-The EU1KY antenna analyzer V3 is an open source project to build your own, reasonably cheap but very functional antenna analyzer that is a handful tool for tuning coax-fed shortwave ham radio and CB antennas. Parameters are similar to known RigExpert AA-170, but color TFT LCD and some features outperform it in usability. Moreover, you have fun building this tool on your own and save some money.
+- tdr.c  display cable length in m and ft in a different screen location
+    FONT_Print(FONT_FRANBIG, TextColor, BackGrColor, 220, 200, "%.2fm %.1fft", lenm,lenm * 3.2808);
 
-See [Wiki](https://bitbucket.org/kuchura/eu1ky_aa_v3/wiki/Home) for details.
+- mainwnd.c force version timestamp as the windows script doesnt work under linux wine
+    #define BUILD_TIMESTAMP_US "23-Oct-2020-VE7IT"
+    #define BUILD_TIMESTAMP_D "2020-Oct-23-VE7IT"
+------------------------------------------------------------------------
 
-## Contribution policy ##
+MY NOTES on using git:
 
-If you have something to add to the source code, some feature or an improvement:
+#to keep up to date with upstream changes
+#grab existing code from this repository
+cd ~/git
+git clone https://github.com/ve7it/Analyzer_EU1KY_CEC_AKF.git
+cd Analyzer_EU1KY_CEC_AKF
+git remote add upstream https://github.com/ted051/Analyzer_EU1KY_CEC_AKF.git
 
-* fork the repository to your bitbucket account (create it if you don't have any)
-* clone your fork to your computer
-* create your own branch in the forked repo
-* implement and test your changes thoroughly
-* commit your changes to your branch
-* pull and merge in latest changes from **EU1KY** branch (which is actually the main development branch with all the features being tested)
-* push your branch to your bitbucket fork
-* in the bitbucket account, create pull request to the **EU1KY** branch of the parent repo (this one). I will review and test it and, if everything is OK, will include your code to the **default** branch which is considered an official pre-release now and all the binaries are built from it
 
-*Please don't use TAB characters in the code, always use 4 spaces instead. Turn on showing whitespaces in your editor and check your changes before commiting.*
+
+
+# Whenever there are changes in the upstream code you can fetch them and 
+# apply to your tree, just do the following
+cd ~/git/Analyzer_EU1KY_CEC_AKF
+git pull
+git fetch upstream
+git merge upstream/master
+git push
+
+# after making local edits.... add all changed files
+git add README.md
+git add Src/analyzer/window/mainwnd.c
+# commit changes with a notation
+git commit -m "Add some-feature"
+#quick check to see if it will run as expected
+git push --dryrun
+# get stuff back up to github
+git push
+
+------------------------------------------------------------------------
+
+

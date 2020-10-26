@@ -236,7 +236,8 @@ static void TDR_DrawCursorText(void)
     //FONT_Print(FONT_FRAN, LCD_YELLOW, LCD_BLACK, 0, 31, "Z: %.1f   %.5f", Zt, step_response[(uint16_t)(TDR_cursorPos*(TDR_Length/(float)MaxTDR_Length))]);
 
     FONT_Print(FONT_FRANBIG, LCD_RED, BackGrColor, 0, 28, "Z: %.1f Ohm", Zt);
-    FONT_Print(FONT_FRANBIG, TextColor, BackGrColor, 170, 28, "%.2f m", lenm);
+//    FONT_Print(FONT_FRANBIG, TextColor, BackGrColor, 170, 28, "%.2f m", lenm);
+    FONT_Print(FONT_FRANBIG, TextColor, BackGrColor, 220, 200, "%.2fm %.1fft", lenm,lenm * 3.2808);  //ve7it
     LCD_Rectangle(LCD_MakePoint(X0-4, Y0 - 90), LCD_MakePoint(X0 + WWIDTH - 1, Y0 + 90), TextColor);
 }
 
