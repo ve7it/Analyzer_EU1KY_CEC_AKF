@@ -41,12 +41,15 @@ git merge upstream/master
 git push
 
 # after making local edits.... add all changed files
+# or just use git commit -a
 git add README.md
 git add Src/analyzer/window/mainwnd.c
+...
+
 # commit changes with a notation
 git commit -m "Add some-feature"
 #quick check to see if it will run as expected
-git push --dryrun
+git push --dry-run
 # get stuff back up to github
 git push
 
