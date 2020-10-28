@@ -30,9 +30,12 @@ echo Src/Inc/build_timestamp.h file created at %CurrYear%-%CurrMonth%-%CurrDay% 
 goto END
 
 :GITERR
-echo #warning GIT failed. Repository not found. Firmware revision will not be generated. >> Src/Inc/build_timestamp.h
-
+echo #warning GIT failed. Using build time/date not repository time/date >> Src/Inc/build_timestamp.h
 echo #define HGREV N/A >> Src/Inc/build_timestamp.h
-goto MAKE_TIMESTAMP
+echo #define BUILD_TIMESTAMP_US "%date% %time%">> Src/Inc/build_timestamp.h
+echo #define BUILD_TIMESTAMP_D "%date% %time%">> Src/Inc/build_timestamp.h
+echo #define HGREVSTR(s) stringify_(s) >> Src/Inc/build_timestamp.h
+echo #define stringify_(s) #s >> Src/Inc/build_timestamp.h
+echo #endif >> Src/Inc/build_timestamp.h
 
 :END

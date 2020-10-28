@@ -1,8 +1,8 @@
 #ifndef BUILD_TIMESTAMP 
-#warning GIT failed. Repository not found. Firmware revision will not be generated. 
+#warning GIT failed. Using build time/date not repository time/date 
 #define HGREV N/A 
-#define BUILD_TIMESTAMP_US "-~-2-~-2 ~-2:~-2 UT"
-#define BUILD_TIMESTAMP_D "~-2-~-2- ~-2:~-2 UT"
+#define BUILD_TIMESTAMP_US "28/10/2020 4:25 PM"
+#define BUILD_TIMESTAMP_D "28/10/2020 4:25 PM"
 #define HGREVSTR(s) stringify_(s) 
 #define stringify_(s) #s 
 #endif 
