@@ -15,9 +15,9 @@ Slight tweaks to a great piece of software.
 - tdr.c  display cable length in m and ft in a different screen location
     FONT_Print(FONT_FRANBIG, TextColor, BackGrColor, 220, 200, "%.2fm %.1fft", lenm,lenm * 3.2808);
 
-- mainwnd.c force version timestamp as the windows script doesnt work under linux wine
-    #define BUILD_TIMESTAMP_US "23-Oct-2020-VE7IT"
-    #define BUILD_TIMESTAMP_D "2020-Oct-23-VE7IT"
+- gen_timestamp.bat use build time and date as the version number if 
+  unable to get git version data
+
 ------------------------------------------------------------------------
 
 MY NOTES on using git:
