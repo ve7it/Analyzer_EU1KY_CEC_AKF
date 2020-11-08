@@ -38,6 +38,7 @@ cd ~/git/Analyzer_EU1KY_CEC_AKF
 git pull
 git fetch upstream
 git merge upstream/master
+git commit -a
 git push
 
 # after making local edits.... add all changed files
