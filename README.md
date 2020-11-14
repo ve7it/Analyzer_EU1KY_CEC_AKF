@@ -37,8 +37,11 @@ git remote add upstream https://github.com/ted051/Analyzer_EU1KY_CEC_AKF.git
 cd ~/git/Analyzer_EU1KY_CEC_AKF
 git pull
 git fetch upstream
+git checkout master
 git merge upstream/master
-git commit -a
+git status
+git add Src/analyzer/window/mainwnd.c .... for files you want updated
+#git commit -a
 git push
 
 # after making local edits.... add all changed files
