@@ -56,6 +56,27 @@ git commit -m "Add some-feature"
 git push --dry-run
 # get stuff back up to github
 git push
+
+
+# You can keep your work stashed away, without commiting it, with 
+# git stash. You would than use git stash pop to get it back. 
+# Or you can git commit it to a separate branch.
+
+# git checkout by date
+git checkout `git rev-list -n 1 --before="2009-07-27 13:37" master`
+
+# return to an old version
+# This will rewind your HEAD branch to the specified version. 
+# All commits that came after this version are effectively undone; 
+# your project is exactly as it was at that point in time.
+git reset --hard 0ad5a7a6
+
+# or use the "--soft" flag. 
+# Git will keep all the changes in those "undone" commits as local modifications:
+# You'll be left with a couple of changes in your working copy and 
+# can then decide what to do with them.
+$ git reset --soft 0ad5a7a6
+
 </pre>
 ------------------------------------------------------------------------
 
